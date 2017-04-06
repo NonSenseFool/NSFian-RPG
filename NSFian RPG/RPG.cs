@@ -56,6 +56,7 @@ namespace NSFian_RPG
             dgvQuests.RowHeadersVisible = false;
             dgvQuests.AutoGenerateColumns = false;
             dgvQuests.DataSource = _player.Quests;
+            dgvQuests.DataSource = _player.ExterminationQuests;
             dgvQuests.Columns.Add(new DataGridViewTextBoxColumn
             {
                 HeaderText = "Name",
@@ -163,16 +164,16 @@ namespace NSFian_RPG
                                 {
                                     // Display message
                                     rtbMessages.Text += Environment.NewLine;
-                                    rtbMessages.Text += "You complete the '" + newLocation.QuestAvailableHere.Name + "' quest." + Environment.NewLine;
+                                    rtbMessages.Text += "You complete the '" + newLocation.QuestExterminationAvailableHere.Name + "' quest." + Environment.NewLine;
 
                                     // Give quest rewards
                                     rtbMessages.Text += "You receive: " + Environment.NewLine;
-                                    rtbMessages.Text += newLocation.QuestAvailableHere.RewardExperiencePoints.ToString() + " experience points" + Environment.NewLine;
-                                    rtbMessages.Text += newLocation.QuestAvailableHere.RewardGold.ToString() + " gold" + Environment.NewLine;
-                                    rtbMessages.Text += newLocation.QuestAvailableHere.RewardItem.Name + Environment.NewLine;
+                                    rtbMessages.Text += newLocation.QuestExterminationAvailableHere.RewardExperiencePoints.ToString() + " experience points" + Environment.NewLine;
+                                    rtbMessages.Text += newLocation.QuestExterminationAvailableHere.RewardGold.ToString() + " gold" + Environment.NewLine;
+                                    rtbMessages.Text += newLocation.QuestExterminationAvailableHere.RewardItem.Name + Environment.NewLine;
                                     rtbMessages.Text += Environment.NewLine;
-                                    UpdatePlayerExpAndLevel(newLocation.QuestAvailableHere.RewardExperiencePoints);
-                                    _player.Gold += newLocation.QuestAvailableHere.RewardGold;
+                                    UpdatePlayerExpAndLevel(newLocation.QuestExterminationAvailableHere.RewardExperiencePoints);
+                                    _player.Gold += newLocation.QuestExterminationAvailableHere.RewardGold;
 
                                     // Add the reward item to the player's inventory
                                     _player.AddItemToInventory(newLocation.QuestAvailableHere.RewardItem);

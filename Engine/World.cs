@@ -89,11 +89,11 @@ namespace Engine
         private static void PopulateMonsters()
         {
             Monster rat = new Monster(MONSTER_ID_RAT, "Rat", 1, 3, 2, 1, 3, 3);
-            rat.LootTable.Add(new LootItem(ItemByID(ITEM_ID_RAT_TAIL), 25, false));
+            rat.LootTable.Add(new LootItem(ItemByID(ITEM_ID_RAT_TAIL), 75, false));
             rat.LootTable.Add(new LootItem(ItemByID(ITEM_ID_PIECE_OF_FUR), 25, true));
 
             Monster snake = new Monster(MONSTER_ID_SNAKE, "Snake", 1, 5, 3, 2, 5, 5);
-            snake.LootTable.Add(new LootItem(ItemByID(ITEM_ID_SNAKE_FANG), 25, false));
+            snake.LootTable.Add(new LootItem(ItemByID(ITEM_ID_SNAKE_FANG), 75, false));
             snake.LootTable.Add(new LootItem(ItemByID(ITEM_ID_SNAKESKIN), 25, true));
 
             Monster giantSpider = new Monster(MONSTER_ID_GIANT_SPIDER, "Giant Spider", 3, 7, 5, 5, 10, 10);
@@ -175,7 +175,7 @@ namespace Engine
 
             Location spiderField = new Location(LOCATION_ID_SPIDER_FIELD, "Forest", "Spider webs coat the trees and ground of this ominous area. Rustling can be heard all nearby and a glimpse of an eight-legged creature runs by.");
             spiderField.MonsterLivingHere = MonsterByID(MONSTER_ID_GIANT_SPIDER);
-            spiderField.QuestAvailableHere = ExterminationQuestByID(QUEST_ID_KILL_SPIDERS);
+            spiderField.QuestExterminationAvailableHere = ExterminationQuestByID(QUEST_ID_KILL_SPIDERS);
 
             Location experienceCave = new Location(LOCATION_ID_EXPERIENCE_CAVE, "Experience Cave", "Hidden away in the grass of the area, you find a small hole leading into a well-lit cave. Inside, strange yellow creatures are hopping about.");
             experienceCave.MonsterLivingHere = MonsterByID(MONSTER_ID_EXPERIENCE_SLIME);
